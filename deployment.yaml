@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pods-discovery-service
+  labels:
+    app: pods-discovery-service
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: pods-discovery-service
+        octopusexport: OctopusExport
+    spec:
+      containers:
+        - name: pods-discovery-service
+          image: rizalfakhri/tgp-pods-discovery-service:latest
+          ports:
+            - name: api
+              containerPort: 9005
+              protocol: TCP
