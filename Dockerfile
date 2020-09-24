@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 9005
-CMD [ "node", "./bin/www" ]
+CMD [ "npm", "start" ]
