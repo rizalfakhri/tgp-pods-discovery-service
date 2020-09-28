@@ -11,8 +11,12 @@ router.get('/', function(req, res, next) {
         description: 'List of all pods.'
       },
       {
-        url: 'http://localhost:9006',
+        url: '/graphql',
         description: 'The GraphQL API.'
+      },
+      {
+        url: '/graphiql',
+        description: 'The GraphiQL Playground.'
       }
     ]
   });
